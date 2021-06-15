@@ -42,8 +42,6 @@ assemble {
 }
 
 application {
-    //noinspection GroovyAssignabilityCheck
-    //noinspection GroovyAccessibility
     mainClass = 'edu.cnm.deepdive.Main'
 }
 
