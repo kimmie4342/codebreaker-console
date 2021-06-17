@@ -3,7 +3,15 @@ package edu.cnm.deepdive.model;
 import com.google.gson.annotations.Expose;
 import java.util.Date;
 
-public class Guess {
+/**
+ * Encapsulates a single guess against a secret code, along with the outcome of that guess. An
+ *  * instance of this class is sent (as JSON) to the web service, with only the {@code tex} field
+ *  * set; the web service returns an instance (again as JSON) with the remaining fields set.
+ *  *
+ */
+
+
+  public class Guess {
 
   @Expose
   private String id;
@@ -67,7 +75,7 @@ public class Guess {
     return solution;
   }
 
-  public void setSolution(boolean solution) {
+ public void setSolution(boolean solution) {
     this.solution = solution;
   }
-}
+ }

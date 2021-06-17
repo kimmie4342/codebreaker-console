@@ -3,6 +3,11 @@ package edu.cnm.deepdive.model;
 import com.google.gson.annotations.Expose;
 import java.util.Date;
 
+/**
+ * Encapsulates the state of a single game(secret code &amp; solution status). An instance of this
+ * class, with only the essential fields set, is sent to the web service to start a new game; the service returns an instance of (as JSON) with the remaining field set.
+ */
+
 public class Game {
 
   @Expose
@@ -23,10 +28,22 @@ public class Game {
   @Expose
   private boolean solved;
 
+  /**
+   * Returns the unique Id of this instance.
+   *
+   * @return
+   */
+
   public String getId() {
     return id;
   }
 
+  /**
+   * Sets the unique Id of this instance. This method may be (but isn't) invoke by Gson to set the value
+   * of this field from the JSON object returned by the web service.
+   *
+   * @param id
+   */
   public void setId(String id) {
     this.id = id;
   }
