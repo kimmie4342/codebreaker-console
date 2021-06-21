@@ -1,6 +1,7 @@
 package edu.cnm.deepdive.service;
 
 import edu.cnm.deepdive.model.Game;
+import edu.cnm.deepdive.model.Guess;
 import edu.cnm.deepdive.service.CodebreakerServiceProxy.InstanceHolder;
 import java.io.IOException;
 import retrofit2.Response;
@@ -46,6 +47,16 @@ public class GameRepository {
     if (!response.isSuccessful()) {
       throw new IllegalArgumentException();
     } //end if
+    return response.body();
+  }
+
+  public Guess newGuess(Game game, String text) throws IOException {
+    Guess guess = new Guess();
+    guess.setText(text);
+    Response<Guess> response = proxy.submitGuess(game.getId(), guess).execute();
+    if (! response.isSuccessful()) {
+      throw new IllegalArgumentException();
+    }
     return response.body();
   }
 
