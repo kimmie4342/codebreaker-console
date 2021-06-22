@@ -52,4 +52,5 @@ application {
 
 run {
     standardInput = System.in
+    jvmArgs += '--add-opens=java.base/java.lang.invoke=ALL-UNNAMED'//open section of Standard library from retrofit. anything is inspect.
 }
